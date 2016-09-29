@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles ={
-    var articleOne : {
+    'article-one' : {
         title: 'Hi this is artciicle 1',
         head: 'article 1',
         date: 'spt 5',
@@ -20,7 +20,7 @@ var articles ={
                         This is content fo my fistrt artcle.
                     </p>`
     },
-        var articleTwo : {
+        'article-two' : {
         title: 'Hi this is artciicle 2',
         head: 'article 2',
         date: 'spt 10',
@@ -35,7 +35,7 @@ var articles ={
                         This is content fo my second artcle.
                     </p>`
     },
-        var articleThree : {
+        'article-three' : {
         title: 'Hi this is artciicle 3',
         head: 'article 3',
         date: 'spt 15',
@@ -96,16 +96,11 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 app.get('/ui/madi.png', function (req, res) {
-  res.send(createTemp(articleOne));
+ res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
-});
-app.get('/article-two', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-app.get('/article-three', function (req, res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+app.get('/:articleName', function (req, res) {
+    var articleName=req.params.articlename;
+  res.send(createTemp(articles[articleName]))
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
