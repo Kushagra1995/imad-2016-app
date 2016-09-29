@@ -85,7 +85,7 @@ var htmltemp =`
 </html>
   
 `;
-return htmlTemp;
+return htmltemp;
 }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
