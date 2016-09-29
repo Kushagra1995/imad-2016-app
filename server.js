@@ -4,21 +4,53 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
-var articleOne = {
-    title: 'Hi this is artciicle 1',
-    head: 'article 1',
-    date: 'spt 5',
-    content: `  
-                <p>
-                    This is content fo my fistrt artcle.
-                </p>
-                <p>
-                    This is content fo my fistrt artcle.
-                </p>
-                <p>
-                    This is content fo my fistrt artcle.
-                </p>`
+var articles ={
+    var articleOne : {
+        title: 'Hi this is artciicle 1',
+        head: 'article 1',
+        date: 'spt 5',
+        content: `  
+                    <p>
+                        This is content fo my fistrt artcle.
+                    </p>
+                    <p>
+                        This is content fo my fistrt artcle.
+                    </p>
+                    <p>
+                        This is content fo my fistrt artcle.
+                    </p>`
+    },
+        var articleTwo : {
+        title: 'Hi this is artciicle 2',
+        head: 'article 2',
+        date: 'spt 10',
+        content: `  
+                    <p>
+                        This is content fo my second artcle.
+                    </p>
+                    <p>
+                        This is content fo my second artcle.
+                    </p>
+                    <p>
+                        This is content fo my second artcle.
+                    </p>`
+    },
+        var articleThree : {
+        title: 'Hi this is artciicle 3',
+        head: 'article 3',
+        date: 'spt 15',
+        content: `  
+                    <p>
+                        This is content fo my third artcle.
+                    </p>
+                    <p>
+                        This is content fo my third artcle.
+                    </p>
+                    <p>
+                        This is content fo my third artcle.
+                    </p>`
+    }
+    
 };
 function createTemp(data){
 var title= data.title;
